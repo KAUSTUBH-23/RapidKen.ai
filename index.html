@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="logo">MyApp</div>
+      <div class="search-bar">
+        <input type="text" id="search" placeholder="Search employees">
+      </div>
+    </div>
+    <nav>
+      <div class="hamburger-menu" onclick="toggleMenu()">☰</div>
+      <ul id="nav-menu">
+        <li><a href="#register" onclick="showPage('register')">Employee Registration</a></li>
+        <li><a href="#list" onclick="showPage('list')">Employee Listing</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="register" class="page">
+      <h1>Employee Registration</h1>
+      <form id="employee-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+        <label for="position">Position:</label>
+        <input type="text" id="position" required>
+        <label for="about">About:</label>
+        <textarea id="about" required></textarea>
+        <label for="joining_date">Joining Date:</label>
+        <input type="date" id="joining_date" required>
+        <button type="submit">Register Employee</button>
+      </form>
+    </section>
+
+    <section id="list" class="page hidden">
+      <h1>Employee Listing</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>About</th>
+            <th>Joining Date</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="employee-table"></tbody>
+      </table>
+      <div class="pagination">
+        <button id="prev-page" onclick="changePage(-1)">Previous</button>
+        <span id="page-info"></span>
+        <button id="next-page" onclick="changePage(1)">Next</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2024 Kaustubh</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
